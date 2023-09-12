@@ -1,0 +1,140 @@
+﻿<Window x:Class="WpfTestSample2MeeraCentrum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestSample2MeeraCentrum"
+        mc:Ignorable="d"
+        Title="Meera Centrum" Height="500" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Name="LeftBorder" Width="250" Background ="White">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                <TreeView Name="MyTree" ItemsSource="{Binding ItemsView}" SelectedItemChanged="OnSelectedItemChanged"  Margin="2" BorderBrush="White">
+
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding ItemsView}">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Delete" Name="deleteMenuItem" Click="deleteMenuItem_Click" >
+                                            <MenuItem.Icon>
+                                                <Image Source="/Resources/DeleteIcon.jpg" Height="15" Width="15"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="Rename" Name="renameMenuItem" Click="renameMenuItem_Click" >
+                                            <MenuItem.Icon>
+                                                <Image Source="/Resources/RenameIcon.png" Height="15" Width="15"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                                </StackPanel.ContextMenu>
+                                <Image Source="{Binding DisplayedImagePath}" Height="16" Width="16" />
+                                <TextBlock Text="{Binding Title}" Margin="5"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </ScrollViewer>
+        </Border>
+
+
+        <Border Grid.Column="1" Visibility="Visible" Background="WhiteSmoke" Name="HomePanel"/>
+
+
+        <Border Grid.Column="1" Visibility="Collapsed" Background="WhiteSmoke" Name="DeletePanel" HorizontalAlignment="Stretch">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="1" Grid.Row="1" Background="White" Name="DeleteWindow" HorizontalAlignment="Center" BorderBrush="Gray" BorderThickness="1">
+                    <Grid Height="160" Width="350">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Height="28" Background="#0066BF">
+                            <TextBlock Text="Warning"  Margin="10,5" Foreground="White" FontSize="13"/>
+                        </Border>
+                        <Border Grid.Row="1">
+                            <StackPanel>
+                                <DockPanel>
+                                    <Image Source="/Resources/WarningIcon.jpg" Height="60" Width="90" Margin="0,20,0,10"/>
+                                    <StackPanel>
+                                        <TextBlock Text="Confirmation" Foreground="OrangeRed" FontSize="12" FontWeight="Bold" Margin="2,30,5,2"/>
+                                        <TextBlock Text="Are you sure you want to delete it?" Margin="2,5,0,2"/>
+                                    </StackPanel>
+                                </DockPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Content="ABORT" Name="btnAbortDelete" Click="btnAbortDelete_Click" 
+                                           Width="80" Height="25" Margin="5,5,2,10" Background="White" BorderBrush="#0066BF" BorderThickness="1" Foreground="#0066BF"/>
+                                    <Button Content="PROCEES" Name="btnProceesDelete" Click="btnProceesDelete_Click" 
+                                           Width="80" Height="25" Margin="2,5,10,10" Background="#0066BF" BorderBrush="#0066BF" BorderThickness="1" Foreground="White"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+
+
+        <Border Grid.Column="1" Visibility="Collapsed" Background="WhiteSmoke" Name="RenamePanel" HorizontalAlignment="Stretch">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="1" Grid.Row="1" Background="White" Name="RenameWindow" HorizontalAlignment="Center" BorderBrush="Gray" BorderThickness="1">
+                    <Grid Height="180" Width="350">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Height="28" Background="#0066BF">
+                            <TextBlock Text="Warning"  Margin="10,5" Foreground="White" FontSize="13"/>
+                        </Border>
+                        <Border Grid.Row="1">
+                            <StackPanel >
+                                <Label Content="Enter the new Title and rename the selected item!" Margin="10,10,5,5"/>
+                                <TextBox Name="txtRename" Text="{Binding NewTitleValue}" Width="330" Height="25" HorizontalAlignment="Center" Margin="10,5,10,5" BorderBrush="Gray" BorderThickness="1"/>
+                                <Label Name="lblError" Foreground="Red" FontSize="10" FontWeight="Bold" Margin="10,2" HorizontalAlignment="Left"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Content="ABORT" Name="btnAbortRename" Click="btnAbortRename_Click"
+                                   Width="80" Height="25" Margin="5,5,2,10" Background="White" BorderBrush="#0066BF" BorderThickness="1" Foreground="#0066BF"/>
+                                    <Button Content="PROCEES" Name="btnProceesRename" Click="btnProceesRename_Click"   
+                                   Width="80" Height="25" Margin="2,5,10,10" Background="#0066BF" BorderBrush="#0066BF" BorderThickness="1" Foreground="White"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</Window>

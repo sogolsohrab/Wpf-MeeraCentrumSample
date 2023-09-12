@@ -1,0 +1,15 @@
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\bin\Debug\WpfTestSample2MeeraCentrum.exe.config
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\bin\Debug\WpfTestSample2MeeraCentrum.exe
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\bin\Debug\WpfTestSample2MeeraCentrum.pdb
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.csproj.AssemblyReference.cache
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\MainWindow.g.cs
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\App.g.cs
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum_MarkupCompile.cache
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum_MarkupCompile.lref
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\MainWindow.baml
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.g.resources
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.Properties.Resources.resources
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.csproj.GenerateResource.cache
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.csproj.CoreCompileInputs.cache
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.exe
+C:\Users\User1\source\repos\WPF\WpfTestSample2MeeraCentrum\WpfTestSample2MeeraCentrum\obj\Debug\WpfTestSample2MeeraCentrum.pdb
